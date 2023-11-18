@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear_layout"
+        android:gravity = "top">
+
+        <TextView
+            android:id="@+id/txtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select University:"
+
+            android:textSize="30dp"
+            app:autoSizeMaxTextSize="50dp"
+            app:autoSizeMinTextSize="1dp"
+            app:autoSizeStepGranularity="20dp"
+            app:autoSizeTextType="uniform"
+            android:layout_margin="10sp"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_alignBottom="@id/txtView"
+
+            android:textSize="30dp"
+            app:autoSizeMaxTextSize="50sp"
+            app:autoSizeMinTextSize="3sp"
+            app:autoSizeStepGranularity="30sp"
+            app:autoSizeTextType="uniform"
+
+            android:layout_margin="10sp"
+            android:entries="@array/univ_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/txtSGPA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SGPA :"
+
+            android:textSize="30dp"
+            app:autoSizeMaxTextSize="50dp"
+            app:autoSizeMinTextSize="1dp"
+            app:autoSizeStepGranularity="20dp"
+            app:autoSizeTextType="uniform"
+            android:layout_margin="10sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:text="7.14"
+            android:gravity="right"
+            android:inputType="number"
+            ></EditText>
+
+        <TextView
+            android:id="@+id/txtCGPA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CGPA :"
+
+            android:textSize="30dp"
+            app:autoSizeMaxTextSize="50dp"
+            app:autoSizeMinTextSize="1dp"
+            app:autoSizeStepGranularity="20dp"
+            app:autoSizeTextType="uniform"
+            android:layout_margin="10sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:text="7.14"
+            android:gravity="right"
+            android:inputType="number"
+            ></EditText>
+
+        <TextView
+            android:id="@+id/txtPERC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Percentage :"
+
+            android:textSize="30dp"
+            app:autoSizeMaxTextSize="50dp"
+            app:autoSizeMinTextSize="1dp"
+            app:autoSizeStepGranularity="20dp"
+            app:autoSizeTextType="uniform"
+            android:layout_margin="10sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:text="7.14"
+            android:gravity="right"
+            android:inputType="number"
+            ></EditText>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

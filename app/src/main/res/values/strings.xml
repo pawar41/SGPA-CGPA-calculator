@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SGPA CGPA calculator</string>
+
+    <string-array name="univ_list">
+        <item>(SPPU) Savitribai Phule Pune University</item>
+        <item>(VTU) Visvesvaraya Technological University </item>
+        <item>University of Mumbai</item>
+        <item>Maulana Abul Kalam Azad University</item>
+        <item>University of Calicut</item>
+    </string-array>
+</resources>
