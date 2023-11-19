@@ -17,21 +17,17 @@
         android:gravity = "top">
 
         <TextView
-            android:id="@+id/txtView"
+            android:id="@+id/txt_label_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Select University:"
 
             android:textSize="30dp"
-            app:autoSizeMaxTextSize="50dp"
-            app:autoSizeMinTextSize="1dp"
-            app:autoSizeStepGranularity="20dp"
-            app:autoSizeTextType="uniform"
             android:layout_margin="10sp"/>
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_alignBottom="@id/txtView"
+            android:layout_alignBottom="@+id/txt_label_1"
 
             android:textSize="30dp"
             app:autoSizeMaxTextSize="50sp"
@@ -39,82 +35,103 @@
             app:autoSizeStepGranularity="30sp"
             app:autoSizeTextType="uniform"
 
-            android:layout_margin="10sp"
+            android:layout_margin="20sp"
             android:entries="@array/univ_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="60dp"
 
             >
 
         </Spinner>
 
         <TextView
-            android:id="@+id/txtSGPA"
+            android:id="@+id/txt_label_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SGPA :"
+            android:text="convert from:"
 
             android:textSize="30dp"
-            app:autoSizeMaxTextSize="50dp"
-            app:autoSizeMinTextSize="1dp"
-            app:autoSizeStepGranularity="20dp"
-            app:autoSizeTextType="uniform"
-            android:layout_margin="10sp"
-            />
+            android:layout_margin="10sp"/>
 
-        <EditText
+        <Spinner
+            android:id="@+id/edit_value_select"
+            android:layout_alignBottom="@+id/txt_label_2"
+
+            android:textSize="30dp"
+            app:autoSizeMaxTextSize="50sp"
+            app:autoSizeMinTextSize="3sp"
+            app:autoSizeStepGranularity="30sp"
+            app:autoSizeTextType="uniform"
+
+            android:layout_margin="20sp"
+            android:entries="@array/edit_txt_vals_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10sp"
-            android:text="7.14"
+            android:minHeight="60dp"
+
+            >
+
+        </Spinner>
+
+
+        <EditText
+            android:id="@+id/edit_text"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="60dp"
+            android:layout_margin="20sp"
+            android:text="90"
             android:gravity="right"
             android:inputType="number"
+            android:textSize="20sp"
             ></EditText>
 
         <TextView
-            android:id="@+id/txtCGPA"
+            android:id="@+id/cgpa_head"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CGPA :"
 
             android:textSize="30dp"
-            app:autoSizeMaxTextSize="50dp"
-            app:autoSizeMinTextSize="1dp"
-            app:autoSizeStepGranularity="20dp"
-            app:autoSizeTextType="uniform"
             android:layout_margin="10sp"/>
 
-        <EditText
+        <TextView
+            android:id="@+id/cgpa_value"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10sp"
+            android:minHeight="60dp"
+            android:layout_margin="20sp"
             android:text="7.14"
             android:gravity="right"
             android:inputType="number"
-            ></EditText>
+            android:textSize="20sp"
+            ></TextView>
 
         <TextView
-            android:id="@+id/txtPERC"
+            android:id="@+id/perc_head"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Percentage :"
 
             android:textSize="30dp"
-            app:autoSizeMaxTextSize="50dp"
-            app:autoSizeMinTextSize="1dp"
-            app:autoSizeStepGranularity="20dp"
-            app:autoSizeTextType="uniform"
             android:layout_margin="10sp"
             />
 
-        <EditText
+        <TextView
+            android:id="@+id/perc_value"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10sp"
+            android:minHeight="60dp"
+            android:layout_margin="20sp"
             android:text="7.14"
             android:gravity="right"
             android:inputType="number"
-            ></EditText>
+            android:textSize="20sp"
+            ></TextView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

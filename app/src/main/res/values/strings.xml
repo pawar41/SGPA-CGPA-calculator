@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SGPA CGPA calculator</string>
 
+    <string name="selected_item">Selected item:</string>
     <string-array name="univ_list">
         <item>(SPPU) Savitribai Phule Pune University</item>
         <item>(VTU) Visvesvaraya Technological University </item>
@@ -8,4 +9,11 @@
         <item>Maulana Abul Kalam Azad University</item>
         <item>University of Calicut</item>
     </string-array>
+
+    <string-array name="edit_txt_vals_list">
+        <item>SGPA</item>
+        <item>CGPA </item>
+        <item>Percentage</item>
+    </string-array>
+
 </resources>
