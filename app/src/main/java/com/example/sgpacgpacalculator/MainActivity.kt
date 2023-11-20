@@ -9,27 +9,108 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.*
 import android.util.Log
+import androidx.core.widget.addTextChangedListener
 import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
 
-    lateinit var selected_edit_text : EditText;
+    lateinit var sgpa_edit_text: EditText;
+    lateinit var perc_edit_text: EditText;
+    lateinit var ans_text: TextView;
 
-    lateinit var cgpa_head : TextView;
-    lateinit var cgpa_value : TextView;
-
-    lateinit var perc_head : TextView;
-    lateinit var perc_value : TextView;
-
-    var university_list_ar: Array<String> = Array(5) { "" };
-    var conv_from_list: Array<String> = Array(3) { "" };
-
-    var current_univ = 0;
-    var current_conv_from = 0;
+    var update_string = 0;
 
 
 
+    var textWatcher: TextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+            update_string = 0;
+            update_calculations();
+        }
+
+        override fun afterTextChanged(s: Editable) {
+        }
+    }
+
+
+
+    var textWatcher1: TextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+
+        }
+
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+            update_string = 1;
+            update_calculations();
+        }
+
+        override fun afterTextChanged(s: Editable) {
+        }
+    }
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        sgpa_edit_text = findViewById(R.id.edit_text_sgpa);
+        perc_edit_text = findViewById(R.id.edit_text_perc);
+        ans_text = findViewById(R.id.ans_head);
+
+
+        sgpa_edit_text.addTextChangedListener(textWatcher);
+        perc_edit_text.addTextChangedListener(textWatcher1);
+
+    }
+
+    fun update_calculations(){
+
+        var sgpa_in = 0.0;
+        var perc_in = 0.0;
+
+        var anstext_in = "= ";
+        var cap_string = "";
+
+        when(update_string){
+            1 -> {
+                // perc changing
+                cap_string =  perc_edit_text.text.toString();
+
+                if(cap_string.isEmpty()){
+                    return;
+                }
+
+                perc_in = cap_string.toDouble();
+
+                sgpa_in = (perc_in / 10) + 0.75;
+
+                anstext_in += sgpa_in.toString() + " sgpa";
+
+            }
+            else -> {
+                //sgpa changing
+                cap_string = sgpa_edit_text.text.toString();
+
+                if(cap_string.isEmpty()){
+                    return;
+                }
+
+                sgpa_in = cap_string.toDouble();
+                perc_in = (sgpa_in - 0.75 )* 10 ;
+
+                anstext_in += perc_in.toString() + " percentage";
+            }
+        }
+
+        ans_text.setText(anstext_in);
+    }
+}
+/*
 
     fun toastMsg(msg: String?) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
@@ -67,6 +148,8 @@ class MainActivity : AppCompatActivity() {
 
 
         selected_edit_text.addTextChangedListener(textWatcher)
+
+
         getUniversity();
         getConvFrom();
     }
@@ -113,7 +196,7 @@ class MainActivity : AppCompatActivity() {
         var result_2 = 0.0;
         var capture = selected_edit_text.text.toString().toDouble();
 
-        
+
 
         when (current_conv_from) {
             1 -> {
@@ -242,4 +325,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
+
+
+ */
